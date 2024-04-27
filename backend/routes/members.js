@@ -31,8 +31,7 @@ router.post('/signin', async (req, res) => {
     })
     if (user) {
         const token = jwt.sign({
-            username: user.username,
-            role: user.role
+            username: username
         }, JWT_SECRET);
 
         res.json({
